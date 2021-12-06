@@ -12,6 +12,7 @@ public class ConsumerService {
 
     @KafkaListener(topics = "orderMessages", groupId = "message_group_id")
     public void consume(OrderMessage orderMessage){
+        orderMessage.setId(null);
         orderHistoryService.createOrUpdateOrder(orderMessage);
         System.out.println("Consuming the message: " + orderMessage);
     }

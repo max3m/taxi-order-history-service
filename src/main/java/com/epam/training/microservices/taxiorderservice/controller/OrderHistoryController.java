@@ -14,10 +14,10 @@ import java.util.List;
 public class OrderHistoryController {
     private final OrderHistoryService orderHistoryService;
 
-    @GetMapping("/orders/{id}")
+    @GetMapping("/orders/{chainId}")
     @ResponseStatus(HttpStatus.OK)
-    public List<OrderMessage> findAllById(@PathVariable("id") Long id) {
-        return orderHistoryService.findAllById(id);
+    public List<OrderMessage> findAllByChainId(@PathVariable("chainId") Long chainId) {
+        return orderHistoryService.findAllByChainId(chainId);
     }
 
     @GetMapping("/orders")

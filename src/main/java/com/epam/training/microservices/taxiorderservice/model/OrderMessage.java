@@ -14,6 +14,7 @@ public class OrderMessage {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long chainId;
     private String username;
     private String driverUsername;
 
@@ -24,11 +25,11 @@ public class OrderMessage {
     private LocalDateTime localDateTime;
 
     public OrderMessage(OrderMessage orderMessage) {
-        this.id = orderMessage.getId();
+        this.chainId = orderMessage.getChainId();
         this.username = orderMessage.getUsername();
         this.driverUsername = orderMessage.getDriverUsername();
         this.status = orderMessage.getStatus();
         this.information = orderMessage.getInformation();
-        this.localDateTime = LocalDateTime.now();
+        this.localDateTime = orderMessage.getLocalDateTime();
     }
 }

@@ -15,6 +15,9 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
+                  name: chain_id
+                  type: BIGINT
+              - column:
                   name: username
                   type: varchar(50)
               - column:
@@ -40,6 +43,9 @@ databaseChangeLog:
             tableName: orders
             columns:
               - column:
+                  name: chain_id
+                  value: 1
+              - column:
                   name: username
                   value: "Customer1"
               - column:
@@ -51,6 +57,51 @@ databaseChangeLog:
               - column:
                   name: information
                   value: "Information1"
+              - column:
+                  name: local_date_time
+                  defaultValueDate: "NOW()"
+        - insert:
+            tableName: orders
+            columns:
+              - column:
+                  name: chain_id
+                  value: 2
+              - column:
+                  name: username
+                  value: "Customer2"
+              - column:
+                  name: driver_username
+                  value: "Driver2"
+              - column:
+                  name: status
+                  value: "CREATED"
+              - column:
+                  name: information
+                  value: "Information2"
+              - column:
+                  name: local_date_time
+                  defaultValueDate: "NOW()"
+        - insert:
+            tableName: orders
+            columns:
+              - column:
+                  name: chain_id
+                  value: 3
+              - column:
+                  name: username
+                  value: "Customer3"
+              - column:
+                  name: driver_username
+                  value: "Driver3"
+              - column:
+                  name: status
+                  value: "CREATED"
+              - column:
+                  name: information
+                  value: "Information3"
+              - column:
+                  name: local_date_time
+                  defaultValueDate: "NOW()"
       rollback:
         - delete:
             tableName: orders

@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface OrderHistoryService {
     void createOrUpdateOrder(OrderMessage orderMessage);
-    List<OrderMessage> findAllById(Long id);
+    List<OrderMessage> findAllByChainId(Long chainId);
     List<OrderMessage> findAll();
 }
